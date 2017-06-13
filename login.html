@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html >
+	<head>
+		<meta charset="UTF-8">
+		<title>Day 001 Login Form</title>
+		
+		
+		<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans:600'>
+		
+		
+		<!-- -------------------------------- Include jQuery -------------------------------- -->
+		<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-3.2.1.min.js"></script>
+		
+		<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.js"></script>
+	
+		<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/additional-methods.js"></script>
+		
+		<!-- END -->
+		
+		<!-- -------------------------------- INCLUDE BOOTSTRAP -------------------------------- -->
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+		
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<!-- -------------------------------- END -------------------------------- -->
+		
+		
+		
+		<!-- -------------------------------- CUSTOM INCLUDES -------------------------------- -->
+		<link rel="stylesheet" href="css/style.css">
+		<script src="js/index.js"></script>
+		<!-- -------------------------------- END -------------------------------- -->
+	</head>
+	
+	<body>
+		
+		<!--
+    you can substitue the span of reauth email for a input with the email and
+    include the remember me checkbox
+    -->
+    <div class="container_login">
+        <div class="card card-container" id="sign_in">
+            <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+            <img id="profile-img" class="profile-img-card" src="images/flame.jpg" />
+            <p id="profile-name" class="profile-name-card"></p>
+            <div class="form-signin">
+				
+                <span id="reauth-email" class="reauth-email"></span>
+				<span class="email_span email_pass_warning" id="email_span" style="display:none">Fill Email</span>
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+				<span class="password_span email_pass_warning" id="password_span" style="display:none">Fill Password</span>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+				<hr>
+                <!--<div id="remember" class="checkbox">
+                    <label>
+                        <input type="checkbox" value="remember-me"> Remember me
+                    </label>
+                </div>-->
+				<input type="hidden" name="redirect" value="google.com">	
+                <button class="btn btn-lg btn-primary btn-block btn-signin" onclick="signIn()">Sign in</button>
+                <button class="btn btn-lg btn-primary btn-block btn-signup" onclick="signUp()">Register</button>
+            </div><!-- /form -->
+            <!--<a href="#" class="forgot-password">
+                Forgot the password?
+            </a>-->
+        </div><!-- /card-container -->
+	
+    </div><!-- /container -->
+		
+		
+	</body>
+</html>
