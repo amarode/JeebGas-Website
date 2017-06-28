@@ -1,232 +1,298 @@
 <!DOCTYPE html>
 
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Day 001 Login Form</title>
-		
-		
-		<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans:600'>
-		
-		
-		<!-- -------------------------------- Include jQuery -------------------------------- -->
-		<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-3.2.1.min.js"></script>
-		
-		<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.js"></script>
-	
-		<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/additional-methods.js"></script>
-		
-		<!-- END -->
-		
-		<!-- -------------------------------- INCLUDE BOOTSTRAP -------------------------------- -->
-		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-		
-		<!-- Optional theme -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-		
-		<!-- Latest compiled and minified JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-		<!-- -------------------------------- END -------------------------------- -->
-		
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.js"></script>
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js"></script>
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
-		
-		
-		<!-- -------------------------------- CUSTOM INCLUDES -------------------------------- -->
-		<link rel="stylesheet" href="css/dashboard.css">
-		<script src="js/index.js"></script>
-		<!-- -------------------------------- END -------------------------------- -->
-	</head>
+<head>
+    <meta charset="UTF-8">
+    <title>JeebGas</title>
+
+
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans:600'>
+
+    <!-- -------------------------------- Include Firebase -------------------------------- -->
+    <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDwS0PZN2FBe-LZzPaKlP_pOpACZCOAlTw",
+            authDomain: "jeebgas-server.firebaseapp.com",
+            databaseURL: "https://jeebgas-server.firebaseio.com",
+            projectId: "jeebgas-server",
+            storageBucket: "jeebgas-server.appspot.com",
+            messagingSenderId: "834344599084"
+        };
+        firebase.initializeApp(config);
+
+
+    </script>
+    <!-- END -->
+
+    <!-- -------------------------------- Include jQuery -------------------------------- -->
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.js"></script>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/additional-methods.js"></script>
+
+    <!-- END -->
+
+    <!-- -------------------------------- Datatables -------------------------------- -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.3.1/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.dataTables.min.css">
+
+    <!--<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/dataTables.jqueryui.min.css">
+
+
+    <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.3.1/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.3.1/js/buttons.print.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/responsive/2.1.1/js/dataTables.responsive.min.js"></script>
+
+
+
+    <!-- -------------------------------- END -------------------------------- -->
+
+
+    <!-- -------------------------------- Include AngularJS -------------------------------- -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <!-- END -->
+
+
+    <!-- -------------------------------- INCLUDE BOOTSTRAP -------------------------------- -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- -------------------------------- END -------------------------------- -->
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+
+
+
+    <!-- -------------------------------- CUSTOM INCLUDES -------------------------------- -->
+    <link rel="stylesheet" href="css/dashboard.css">
+    <script src="js/index.js"></script>
+    <!-- -------------------------------- END -------------------------------- -->
+
+
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/autofill/2.1.2/css/autoFill.bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedheader/3.1.2/css/fixedHeader.bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.1.0/css/responsive.bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/rowreorder/1.1.2/css/rowReorder.bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/scroller/1.4.2/css/scroller.bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.2.0/css/select.bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.2.1/css/buttons.dataTables.min.css"/>
+
+
+
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/autofill/2.1.2/js/dataTables.autoFill.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.1/js/buttons.html5.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/autofill/2.1.2/js/autoFill.bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.1/js/buttons.colVis.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/fixedheader/3.1.2/js/dataTables.fixedHeader.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.1.0/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.1.0/js/responsive.bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/rowreorder/1.1.2/js/dataTables.rowReorder.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/scroller/1.4.2/js/dataTables.scroller.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/select/1.2.0/js/dataTables.select.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <style>
+        td.details-control {
+            background: url('https://datatables.net/examples/resources/details_open.png') no-repeat center center;
+            cursor: pointer;
+        }
+        tr.details td.details-control {
+            background: url('https://datatables.net/examples/resources/details_close.png') no-repeat center center;
+        }
+    </style>
+
+</head>
 <body>
 
 <div class="container"><h2>JeebGas Dashboard</h2></div>
 
-<div id="exTab2" class="container">	
-<ul class="nav nav-tabs">
-			<li class="active">
-			<a href="#1" data-toggle="tab">Statistics</a>
-			</li>
-			<li role="presentation" class="dropdown"> 
-			<a href="#" class="dropdown-toggle users_dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> Users <span class="caret"></span> </a>
-			<ul class="dropdown-menu"> 
-			<li><a href="#4" data-toggle="tab">Customers</a></li>
-			<li><a href="#3" data-toggle="tab">Drivers</a></li>
-			<li role="separator" class="divider"></li>
-			<li><a href="#3" data-toggle="tab">All</a></li>
-			</ul> 
-			</li>
-			<li>
-			<a href="#3" data-toggle="tab">Feedback</a>
-			</li>
-		</ul>
+<div id="exTab2" class="container">
+    <ul class="nav nav-tabs">
+        <li class="active">
+            <a href="#1" data-toggle="tab">Statistics</a>
+        </li>
+        <li role="presentation" class="dropdown">
+            <a href="#" class="dropdown-toggle users_dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> Users <span class="caret"></span> </a>
+            <ul class="dropdown-menu">
+                <li><a href="#customers_table" data-toggle="tab">Customers</a></li>
+                <li><a href="#drivers_table" data-toggle="tab">Drivers</a></li>
+                <!--<li role="separator" class="divider"></li>-->
+                <!--<li><a href="#all" data-toggle="tab">All</a></li>-->
+            </ul>
+        </li>
+        <li>
+            <a href="#feedback_table" data-toggle="tab">Feedback</a>
+        </li>
+    </ul>
 
-			<div class="tab-content ">
-			
-			<!-- Statics -->
-		  <div class="tab-pane active" id="1">
-          <h3>Statistics Tab</h3>
-		  <div class="chartjs-wrapper">
-		  <iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;"></iframe>
-		  <canvas id="chartjs-1" class="chartjs" width="770" height="385" style="display: block;width: 780px;height: 385px;"></canvas>
-		  <script>new Chart(document.getElementById("chartjs-1"),{"type":"bar","data":{"labels":["January","February","March","April","May","June","July"],"datasets":[{"label":"My First Dataset","data":[65,59,80,81,56,55,40],"fill":false,"backgroundColor":["rgba(255, 99, 132, 0.2)","rgba(255, 159, 64, 0.2)","rgba(255, 205, 86, 0.2)","rgba(75, 192, 192, 0.2)","rgba(54, 162, 235, 0.2)","rgba(153, 102, 255, 0.2)","rgba(201, 203, 207, 0.2)"],"borderColor":["rgb(255, 99, 132)","rgb(255, 159, 64)","rgb(255, 205, 86)","rgb(75, 192, 192)","rgb(54, 162, 235)","rgb(153, 102, 255)","rgb(201, 203, 207)"],"borderWidth":1}]},"options":{"scales":{"yAxes":[{"ticks":{"beginAtZero":true}}]}}});</script></div>
+    <div class="tab-content ">
 
-		  <br>
-		  <hr>
-		  <br>
-		  <div class="chartjs-wrapper"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;"></iframe><canvas id="chartjs-5" class="chartjs" width="770" height="385" style="display: block; width: 770px; height: 385px;"></canvas><script>new Chart(document.getElementById("chartjs-5"),{"type":"polarArea","data":{"labels":["Red","Green","Yellow","Grey","Blue"],"datasets":[{"label":"My First Dataset","data":[11,16,7,3,14],"backgroundColor":["rgb(255, 99, 132)","rgb(75, 192, 192)","rgb(255, 205, 86)","rgb(201, 203, 207)","rgb(54, 162, 235)"]}]}});</script></div>
-		  
-		  <br>
-		  <hr>
-		  <br>
-		  <div class="chartjs-wrapper"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;"></iframe><canvas id="chartjs-4" class="chartjs" width="770" height="385" style="display: block; width: 770px; height: 385px;"></canvas><script>new Chart(document.getElementById("chartjs-4"),{"type":"doughnut","data":{"labels":["Red","Blue","Yellow"],"datasets":[{"label":"My First Dataset","data":[300,50,100],"backgroundColor":["rgb(255, 99, 132)","rgb(54, 162, 235)","rgb(255, 205, 86)"]}]}});</script></div>
-				
-				</div>
-				<!-- End Statics -->
-				
-				<!-- Users -->
-			  <div class="tab-pane" id="21">
-          <h3>Customers Tab</h3>
-		  
-				</div>	
-				
-				<!-- End Users -->
-				
-				<!-- Users -->
-			  <div class="tab-pane" id="22">
-          <h3>Drivers Tab</h3>
-				</div>	
-				
-				<!-- End Users -->
-				
-				<!-- Users -->
-			  <div class="tab-pane" id="23">
-          <h3>All Tab</h3>
-				</div>	
-				
-				<!-- End Users -->
+        <!-- Statics -->
+        <div class="tab-pane active" id="1">
+            <h3>Statistics Tab</h3>
+            <div class="chartjs-wrapper">
+                <iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;"></iframe>
+                <canvas id="chartjs-1" class="chartjs" width="770" height="385" style="display: block;width: 780px;height: 385px;"></canvas>
+                <script>new Chart(document.getElementById("chartjs-1"),
+                    {
+                        "type":"bar",
+                        "data":
+                            {
+                                "labels":["January","February","March","April","May","June","July","August","September","October","November","December"],
+                                "datasets":[
+                                    {
+                                        "label":"Sales Per Month",
+                                        "data":[65,59,80,81,56,55,0,0,0,0,0,0],
+                                        "fill":false,
+                                        "backgroundColor":[
+                                            "rgba(255, 99, 132, 0.2)",
+                                            "rgba(255, 159, 64, 0.2)",
+                                            "rgba(255, 205, 86, 0.2)",
+                                            "rgba(75, 192, 192, 0.2)",
+                                            "rgba(54, 162, 235, 0.2)",
+                                            "rgba(153, 102, 255, 0.2)",
+                                            "rgba(201, 203, 207, 0.2)",
+                                            "rgba(142, 210, 111, 0.2)",
+                                            "rgba(81, 216, 207, 0.2)",
+                                            "rgba(213, 111, 42, 0.2)",
+                                            "rgba(119, 118, 207, 0.2)",
+                                            "rgba(110, 99, 27, 0.2)",
+                                            "rgba(17, 51, 143, 0.2)",
+                                        ],
+                                        "borderColor":[
+                                            "rgb(255, 99, 132)",
+                                            "rgb(255, 159, 64)",
+                                            "rgb(255, 205, 86)",
+                                            "rgb(75, 192, 192)",
+                                            "rgb(54, 162, 235)",
+                                            "rgb(153, 102, 255)",
+                                            "rgb(201, 203, 207)"],
+                                        "borderWidth":1
+                                    }
+                                ]
+                            },
+                        "options":
+                            {
+                                "scales":
+                                    {
+                                        "yAxes":[
+                                            {
+                                                "ticks":{"beginAtZero":true}
+                                            }
+                                        ]
+                                    }
+                            }
+                    });</script></div>
 
-				<!-- Feedback -->
+            <br>
+            <hr>
+            <br>
+            <div class="chartjs-wrapper"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;"></iframe><canvas id="chartjs-5" class="chartjs" width="770" height="385" style="display: block; width: 770px; height: 385px;"></canvas>
+                <script>
+                    new Chart(document.getElementById("chartjs-5"),
+                        {
+                            "type":"polarArea",
+                            "data":
+                                {"labels":
+                                    ["Beit Ha Kerem","Shufat","Abu Ghosh","Beit Hanina","Wad Al Joz"],
+                                    "datasets":
+                                        [
+                                            {
+                                                "label":"My First Dataset",
+                                                "data":[11,16,7,3,14],
+                                                "backgroundColor":[
+                                                    "rgb(255, 99, 132)",
+                                                    "rgb(75, 192, 192)",
+                                                    "rgb(255, 205, 86)",
+                                                    "rgb(201, 203, 207)",
+                                                    "rgb(54, 162, 235)"
+                                                ]
+                                            }
+                                        ]
+                                }
+                        }
+                    );
+                </script>
+            </div>
 
-        <div class="tab-pane" id="3">
-          <h3>Feedback Tab</h3>
-		  <div>
-		  <table class="table table-striped">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Driver ID</th>
-      <th>Customer ID</th>
-      <th>Area</th>
-	  <th>Service Type</th>
-      <th>Rating</th>
-      <th>Comment</th>
-	  <!--<th>Photo</th>       photo--> 
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>23423454</td>
-      <td>sfet45y54y</td>
-      <td>Suafat</td>
-	  <td>Gas</td>
-      <td>4.0</td>
-      <td>very good</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-     <td>11123433</td>
-      <td>t45y565678</td>
-      <td>Beit Hanina</td>
-	  <td>repair</td>
-      <td>3.5</td>
-      <td>good</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-     <td>1111111</td>
-      <td>456463424</td>
-      <td>Abu ghosh</td>
-	  <td>Gas & Repair</td>
-      <td>5.0</td>
-      <td>Best Driver Ever</td>
-    </tr>
-  </tbody>
-</table>
-		  </div>
-		  
-				</div>
-								<!-- End feedback -->
+            <br>
+            <hr>
+            <br>
+            <div class="chartjs-wrapper"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;"></iframe><canvas id="chartjs-4" class="chartjs" width="770" height="385" style="display: block; width: 770px; height: 385px;"></canvas>
+                <script>new Chart(document.getElementById("chartjs-4"),
+                    {
+                        "type":"doughnut",
+                        "data":
+                            {"labels":["Deliver","Repair"],
+                                "datasets":[
+                                    {
+                                        "label":"My First Dataset",
+                                        "data":[50,30],
+                                        "backgroundColor":[
+                                            "rgb(54, 162, 235)",
+											"rgb(255, 99, 132)"
+                                        ]
+                                    }
+                                ]
+                            }
+                    }
+                );
+                </script>
+            </div>
+        </div>
 
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								
-        <div class="tab-pane" id="4">
-          <h3>Feedback Tab</h3>
-		  <div>
-		  <table class="table table-striped">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Driver ID</th>
-      <th>Customer ID</th>
-      <th>Area</th>
-	  <th>Service Type</th>
-      <th>Rating</th>
-      <th>Comment</th>
-	  <!--<th>Photo</th>       photo--> 
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>23423454</td>
-      <td>sfet45y54y</td>
-      <td>Suafat</td>
-	  <td>Gas</td>
-      <td>4.0</td>
-      <td>very good</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-     <td>11123433</td>
-      <td>t45y565678</td>
-      <td>Beit Hanina</td>
-	  <td>repair</td>
-      <td>3.5</td>
-      <td>good</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-     <td>1111111</td>
-      <td>456463424</td>
-      <td>Abu ghosh</td>
-	  <td>Gas & Repair</td>
-      <td>5.0</td>
-      <td>koko</td>
-    </tr>
-  </tbody>
-</table>
-		  </div>
-		  
-				</div>
-								<!-- End feedback -->
+        <!-- End Statics -->
 
-				
-			</div>
-  </div>
+        <div class="tab-pane" id="customers_table">
+            <h3>Customers Table</h3>
+            <div>
+                <table id="customers_DataTable" class="cell-border display compact hover order-column row-border stripe" cellspacing="0" width="100%"></table>
+            </div>
+
+        </div>
+        <!-- End Customers Table -->
+
+        <div class="tab-pane" id="drivers_table">
+            <h3>Drivers Table</h3>
+            <div>
+                <table id="drivers_DataTable" class="cell-border display compact hover order-column row-border stripe" cellspacing="0" width="100%"></table>
+            </div>
+
+        </div>
+        <!-- End Drivers Table -->
+
+        <div class="tab-pane" id="feedback_table">
+            <h3>Feedback Table</h3>
+            <div>
+                <table id="feedback_DataTable" class="cell-border display compact hover order-column row-border " cellspacing="0" width="100%">
+
+                </table>
+            </div>
+
+        </div>
+        <!-- End Feedback Table -->
+    </div>
+</div>
 
 
-  
+
 </body>
 </html>

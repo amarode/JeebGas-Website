@@ -2,7 +2,7 @@
 <html >
 	<head>
 		<meta charset="UTF-8">
-		<title>Day 001 Login Form</title>
+		<title>JeebGas</title>
 		
 		
 		<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans:600'>
@@ -15,7 +15,7 @@
 	
 		<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/additional-methods.js"></script>
 		
-		<!-- THE END -->
+		<!-- END -->
 		
 		<!-- -------------------------------- INCLUDE BOOTSTRAP -------------------------------- -->
 		<!-- Latest compiled and minified CSS -->
@@ -38,15 +38,12 @@
 	
 	<body>
 		
-		<!--
-    you can substitue the span of reauth email for a input with the email and
-    include the remember me checkbox
-    -->
+	
     <div class="container_login">
         <div class="card card-container" id="sign_in">
-            <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
             <img id="profile-img" class="profile-img-card" src="images/flame.jpg" />
             <p id="profile-name" class="profile-name-card"></p>
+			<!--------------- SIGN IN DIV -------------------->
             <div class="form-signin">
 				
                 <span id="reauth-email" class="reauth-email"></span>
@@ -62,7 +59,7 @@
                 </div>-->
 				<input type="hidden" name="redirect" value="google.com">	
                 <button class="btn btn-lg btn-primary btn-block btn-signin" onclick="signIn()">Sign in</button>
-                <button class="btn btn-lg btn-primary btn-block btn-signup" onclick="signUp()">Register</button>
+                <button class="btn btn-lg btn-primary btn-block btn-signup" onclick="signUp()" style="display:none">Register</button>
             </div><!-- /form -->
             <!--<a href="#" class="forgot-password">
                 Forgot the password?
